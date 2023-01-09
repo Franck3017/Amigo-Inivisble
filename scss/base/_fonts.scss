@@ -1,29 +1,31 @@
+@import '../utils/functions';
+
 @font-face {
   font-family: 'Raleway';
-  src: url(../../media/fonts/Raleway/static/Raleway-Regular.ttf) format('truetype');
+  src: img('/fonts/Raleway/static/Raleway-Regular.ttf') format('truetype');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url(../../media/fonts/Raleway/static/Raleway-Medium.ttf) format('truetype');
+  src: img('/fonts/Raleway/static/Raleway-Medium.ttf') format('truetype');
   font-weight: 500;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url(../../media/fonts/Raleway/static/Raleway-SemiBold.ttf) format('truetype');
+  src: img('/fonts/Raleway/static/Raleway-SemiBold.ttf') format('truetype');
   font-weight: 600;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url(../../media/fonts/Raleway/static/Raleway-Bold.ttf) format('truetype');
+  src: img('/fonts/Raleway/static/Raleway-Bold.ttf') format('truetype');
   font-weight: 700;
 }
 
 @font-face{
   font-family: 'Kaushan Script';
-  src: url(../../media/fonts/Kaushan_Script/KaushanScript-Regular.ttf) format('truetype');
+  src: img('/fonts/Kaushan_Script/KaushanScript-Regular.ttf') format('truetype');
   font-weight: 400;
 }

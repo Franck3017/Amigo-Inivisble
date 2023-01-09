@@ -1,81 +1,72 @@
 const $ = (selector) => document.querySelector(selector)
+const $$ = (selector) => document.querySelectorAll(selector)
 
 const form = $('#form')
 const list = $('#list')
 const mainform = $('.main-form')
-
-const regularExpression = {
-  name: /^[a-zA-ZÀ-ÿ\s]{5,40}$/,
-  email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-}
-
-const sendForm = (e) => {
-  e.preventDefault()
-  const name = $('#name').value
-  const email = $('#email').value
-
-  if (name && email) {
-    showMessage('Se ha enviado correctamente', 'btn-success', 1500, $('.list-group__name'))
-  } else {
-    showMessage('Debes rellenar los campos solicitados', 'btn-danger', 1500, $('.list-group__email'))
-  }
-  form.reset()
-}
-
-const validateForm = (e) => {
-  if(e.target.name === 'name'){
-    return validateField(regularExpression.name, e.target, 'name')
-  }else {
-    return validateField(regularExpression.email, e.target, 'email')
-  }
-}
-
-const validateField = (expression, input, name) => {
-  if(expression.test(input.value)){
-    showMessage('Los parametros son correctos', 'btn-success', 500, $(`.list-group__${name}`))
-  }else {
-    showMessage('Los parametros son incorrectos', 'btn-danger', 500, $(`.list-group__${name}`))
-  }
-}
-
-form.addEventListener('keyup', validateForm)
-form.addEventListener('submit', sendForm)
+let i = 0
 
 mainform.addEventListener('click', e => {
   const targ = e.target
-  if (targ.tagName === 'A' && targ.textContent === 'Añadir') {
+  if (targ.tagName === 'A' && targ.className.includes('añadir')) {
     addElement()
-    showMessage('Se ha añadido correctamente', 'btn-info', 1500, form)
+    showMessage('Se ha añadido correctamente', 'btn-info', 500, form)
   }
-  if (targ.tagName === 'A' && targ.textContent === 'Eliminar') {
+  if (targ.tagName === 'A' && targ.className.includes('eliminar')) {
     deleteElement()
-    showMessage('Se ha eliminado correctamente', 'btn-danger', 1500, form)
+    showMessage('Se ha eliminado correctamente', 'btn-danger', 1000, form)
   }
+
 })
+
+const sendForm = (e) => {
+  e.preventDefault()
+  
+  const name = $('#name').value
+  const email = $('#email').value
+  const groups = $$('.groups')
+
+  if (!name || !email) {
+    showMessage('Debes rellenar los campos solicitados', 'btn-danger', 1500, form)
+  } else if (groups.length > 1){
+    showMessage('Se esta procesando los datos', 'btn-success', 1500, form)
+    setTimeout(() => {
+      form.submit()
+      form.reset()
+    }, 500)
+  } else {
+    showMessage('Debes añadir al menos 2 amigos', 'btn-info', 1500, form)
+  }
+}
+
+form.addEventListener('submit', sendForm)
 
 const addElement = () => {
   const div = document.createElement('div')
   div.className = 'groups'
   div.innerHTML = `
     <div class="list-group">
-      <div>
+      <div class="list-group__name">
         <label for="name">Nom</label>
-        <input type="text" name="name" id="name" class="list-group__name">
+        <input type="text" name="name[]" id="name${i}" class="list__name">
       </div>
-      <div>
+      <div class="list-group__email">
         <label for="email">Correu Electrònic</label>
-        <input type="email" name="mail" id="email" class="list-group__email">
+        <input type="email" name="mail[]" id="email${i}" class="list__email">
       </div>
-      <div>
-        <a href="#" id="eliminar" class="btn btn-danger eliminar">Eliminar</a>
+      <div class="list-group__trash">
+        <a href="#" id="eliminar" class="btn btn-danger eliminar">
+          <i class="fas fa-trash-alt"></i>
+        </a>
       </div>
     </div>
   `
+  i++
   list.append(div)
 }
 
 const deleteElement = () => {
-  eliminar.parentElement.parentElement.remove()
+  eliminar.parentElement.parentElement.parentElement.remove()
 }
 
 const showMessage = (message, classSCSS, interval, downElement) => {

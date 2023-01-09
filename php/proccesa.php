@@ -6,10 +6,12 @@
   require 'utils/Exception.php';
   require 'utils/PHPMailer.php';
   require 'utils/SMTP.php';
-  require 'data/getdata.php';
 
-  //Instaciem la classe i treballem les excepcions
-  $mail = new PHPMailer(true);
+  
+  function sendEmail($email, $body){
+    
+    //Instaciem la classe i treballem les excepcions
+    $mail = new PHPMailer(true);
 
   try 
     {
@@ -33,7 +35,7 @@
       //Preparem l'enviament
       $mail->setFrom('webformulariscursos@gmail.com');           // Remitent 
       //$mail->setFrom('webformulariscursos@gmail.com', $nom);           // Remitent 
-      $mail->addAddress('mpeliculasenhd@gmail.com');     // Destinatari
+      $mail->addAddress($email);     // Destinatari
       
       // Content
       $mail->isHTML(true);                                  // Establim format HTML del missatge
@@ -41,6 +43,9 @@
       $mail->Body    = $body;
       $mail->CharSet = 'UTF-8';
       $mail->send();
+      // Redirigim a la pàgina de confirmació
+      header('Location: ../index.php?status=ok');
       } catch (Exception $e) {
         echo "El missatge no s'ha pogut enviar. Error: {$mail->ErrorInfo}";
     }
+  }

@@ -1,14 +1,9 @@
 @import '../utils/mixins';
 
-@include breakpoint(xs){
-  width: 100%;
-  color: map-get($blues, blue-400 );
-}
-
 @include breakpoint(sm){
   max-width: 540px;
   margin: 0 auto;
-  color: map-get($indigos, indigo-500 );
+  color: map-get($indigos, indigo-500);
 }
 
 @include breakpoint(md){

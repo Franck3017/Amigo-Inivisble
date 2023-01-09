@@ -1,0 +1,9 @@
+@import 'variables';
+
+@function image ($image){
+  @if(type-of($image) == string and str-slice($image, 1, 1) == '/'){
+    @return url(unquote($path + $image));
+  }@else{
+    @error 'The image path must be a string and start with a slash';
+  }
+}
