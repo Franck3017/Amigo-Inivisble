@@ -199,14 +199,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Franck3017/generador_de_regalos.git"
+    "url": "git+https://github.com/Franck3017/Amigo-Invisible.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Franck3017/generador_de_regalos/issues"
+    "url": "https://github.com/Franck3017/Amigo-Invisible/issues"
   },
-  "homepage": "https://github.com/Franck3017/generador_de_regalos#readme",
+  "homepage": "https://github.com/Franck3017/Amigo-Invisible#readme",
   "description": ""
 }
