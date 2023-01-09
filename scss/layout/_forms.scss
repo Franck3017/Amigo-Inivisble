@@ -1,0 +1,125 @@
+@import '../utils/variables';
+
+.container{
+  width: 100%;
+  background-color: map-get($cyan, cyan-50);
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.main{
+  flex: 1;
+}
+
+.title{
+  color: map-get($yellows, yellow-400);
+  font-family: 'Kaushan Script', cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 3px 0px 5px map-get($yellows, yellow-200);
+  margin-top: 0;
+}
+
+.main-form{
+  width: 100%;
+  max-width: 540px;
+  padding: 0 1rem;
+
+  margin: 2rem auto 0 auto;
+}
+
+.form{
+  width: 100%;
+  border-radius: .25rem;
+  box-shadow: 3px 4px 10px hsl(200, 100, 75),
+              -3px -4px 15px hsl(200, 100, 95);
+  
+  position: relative;
+  overflow: hidden;
+  
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(200, 100, 95);
+    backdrop-filter: blur(50px);
+  }
+}
+
+.form-group{
+  padding: 1rem .75rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+  position: relative;
+}
+
+.form-group__name, .form-group__email{
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+
+.input-group-name, .input-group-email{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input__name, .input__email{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  padding: .75rem .5rem .75rem 3.4rem;
+  border: none;
+  outline: none;
+  border-radius: .25rem;
+}
+
+.input__name:focus, .input__email:focus{
+  box-shadow: 0 0 0 3px map-get($blues, blue-300);
+  transition: box-shadow .3s ease-in-out;
+}
+
+.input__name::selection, .input__email::selection{
+  background-color: map-get($indigos, indigo-300);
+}
+
+.icon{
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100%;
+  padding: .75rem .85rem;
+  background-color: map-get($cyan, cyan-300);
+  color: $white;
+  border-radius: .25rem 0 0 .25rem;
+}
+
+.button{
+  margin: .35rem auto 0 auto;
+
+  &:hover .btn{
+    background-color: map-get($yellows, yellow-300);
+    transition: background-color .3s ease-in-out;
+  }
+}
+
+.tree{
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}

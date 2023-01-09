@@ -1,0 +1,36 @@
+@import '../utils/mixins';
+
+@include breakpoint(xs){
+  width: 100%;
+  color: map-get($blues, blue-400 );
+}
+
+@include breakpoint(sm){
+  max-width: 540px;
+  margin: 0 auto;
+  color: map-get($indigos, indigo-500 );
+}
+
+@include breakpoint(md){
+  max-width: 720px;
+  margin: 0 auto;
+  color: $black;
+}
+
+@include breakpoint(lg){
+  max-width: 960px;
+  margin: 0 auto;
+  color: map-get($grays, gray-500 );
+}
+
+@include breakpoint(xl){
+  max-width: 1140px;
+  margin: 0 auto;
+  color: map-get($yellows, yellow-300 );
+}
+
+@include breakpoint(xxl){
+  max-width: 1320px;
+  margin: 0 auto;
+  color: map-get($oranges, orange-600 );
+}

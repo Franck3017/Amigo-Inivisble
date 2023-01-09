@@ -1,0 +1,48 @@
+@import 'variables';
+
+@mixin breakpoint ($breakpoint){
+  @if map-has-key($breakpoints, $breakpoint){
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .container-#{$breakpoint}{
+        @content;
+      }
+    }
+    
+  }@else if(type-of($breakpoint) == number and unit($breakpoint) == 'px' or unit($breakpoint) == 'em' or unit($breakpoint) == 'rem'){
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      .container-#{$breakpoint}{
+        @content;
+      }
+    }
+  }
+  
+}
+
+@mixin btn ($size, $weight, $transform, $bdr) {
+  %btn-place{
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn{
+    @extend %btn-place;
+    font-size: $size;
+    font-weight: $weight;
+    text-transform: $transform;
+    border-radius: $bdr;
+    padding: .65rem 1.25rem;
+  }
+}
+
+@mixin btnColors ($btn-color...){
+    @if(length($btn-color) > 0){
+      @for $i from 1 through length($btn-color){
+        .btn-#{nth($btn-color, $i)}{
+          background-color: lighten(map-get($btn-colors,nth($btn-color, $i)), 10);
+          color: $white;
+        }
+      }
+    }
+}

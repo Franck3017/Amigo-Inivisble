@@ -1,0 +1,166 @@
+$indigos: (
+  indigo-default: #6610f2,
+  indigo-100: #E0CFFC,
+  indigo-200: #C29FFA,
+  indigo-300: #A370F7,
+  indigo-400: #8540F5,
+  indigo-500: #6610F2,
+  indigo-600: #520DC2,
+  indigo-700: #3D0A91,
+  indigo-800: #29075F,
+  indigo-900: #15042E,
+);
+
+$blues: (
+  blue-default: #0d6efd,
+  blue-100: #D1E7FF,
+  blue-200: #A6C8FF,
+  blue-300: #7AA9FF,
+  blue-400: #4D8AFF,
+  blue-500: #0d6efd,
+  blue-600: #0B5ED7,
+  blue-700: #084EA3,
+  blue-800: #063F6F,
+  blue-900: #042F3B,
+);
+
+$greens: (
+  green-default: #28a745,
+  green-100: #D1E7DD,
+  green-200: #A3CFBA,
+  green-300: #75B798,
+  green-400: #47A076,
+  green-500: #28a745,
+  green-600: #23843B,
+  green-700: #1D6A31,
+  green-800: #165027,
+  green-900: #0F361D,
+);
+
+$teals: (
+  teal-default: #20c997,
+  teal-100: #C6F7E2,
+  teal-200: #8EEDC7,
+  teal-300: #57E4AC,
+  teal-400: #28D094,
+  teal-500: #20c997,
+  teal-600: #17A673,
+  teal-700: #138557,
+  teal-800: #0C6343,
+  teal-900: #044227,
+);
+
+$yellows: (
+  yellow-default: #ffc107,
+  yellow-100: #FFF3CD,
+  yellow-200: #FFE699,
+  yellow-300: #FFDA66,
+  yellow-400: #FFCD33,
+  yellow-500: #ffc107,
+  yellow-600: #E6AC00,
+  yellow-700: #B38F00,
+  yellow-800: #806200,
+  yellow-900: #4D4500,
+);
+
+$oranges: (
+  orange-default: #fd7e14,
+  orange-100: #FFE5CC,
+  orange-200: #FFCC99,
+  orange-300: #FFB266,
+  orange-400: #FF9933,
+  orange-500: #fd7e14,
+  orange-600: #E67300,
+  orange-700: #B35900,
+  orange-800: #804000,
+  orange-900: #4D2600,
+);
+
+$reds: (
+  red-default: #dc3545,
+  red-100: #F8D7DA,
+  red-200: #F5B0B3,
+  red-300: #F28C8D,
+  red-400: #F06C6C,
+  red-500: #dc3545,
+  red-600: #C82333,
+  red-700: #9A1F2B,
+  red-800: #6C1A23,
+  red-900: #3E151B,
+);
+
+$pinks: (
+  pink-default: #e83e8c,
+  pink-100: #F8D7DA,
+  pink-200: #F5B0B3,
+  pink-300: #F28C8D,
+  pink-400: #F06C6C,
+  pink-500: #e83e8c,
+  pink-600: #DA2C6C,
+  pink-700: #AC235B,
+  pink-800: #7C1A4A,
+  pink-900: #4D1038,
+);
+
+$purples: (
+  purple-default: #6f42c1,
+  purple-100: #EDE7F6,
+  purple-200: #D1C4E9,
+  purple-300: #B39DDB,
+  purple-400: #9575CD,
+  purple-500: #6f42c1,
+  purple-600: #5E35A8,
+  purple-700: #4C288F,
+  purple-800: #3B1C75,
+  purple-900: #2A0E5C,
+);
+
+$grays: (
+  gray-default: #6c757d,
+  gray-100: #F8F9FA,
+  gray-200: #E9ECEF,
+  gray-300: #DEE2E6,
+  gray-400: #CED4DA,
+  gray-500: #6c757d,
+  gray-600: #5A6268,
+  gray-700: #495057,
+  gray-800: #343A40,
+  gray-900: #212529,
+);
+
+$cyan: (
+  cyan-default: #0dcaf0,
+  cyan-50: #E3F2FD,
+  cyan-100: #D1F2FF,
+  cyan-200: #A3E4FF,
+  cyan-300: #76D7FF,
+  cyan-400: #48C9FF,
+  cyan-500: #0dcaf0,
+  cyan-600: #0B9EBD,
+  cyan-700: #086F89,
+  cyan-800: #064057,
+  cyan-900: #031124,
+);
+
+$white: #fff;
+$black: #000;
+
+$btn-colors: (
+  primary: map-get($blues, blue-default),
+  secondary: map-get($grays, gray-default),
+  success: map-get($greens, green-default),
+  info: map-get($cyan, cyan-default),
+  warning: map-get($yellows, yellow-default),
+  danger: map-get($reds, red-default),
+  light: map-get($grays, gray-100),
+  dark: map-get($grays, gray-800),
+);
+
+$breakpoints: (
+  xs: 576px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);

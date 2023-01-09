@@ -1,0 +1,4 @@
+@import '../utils/mixins';
+
+@include btn(.9rem, 600, initial, 5px);
+@include btnColors(map-keys($btn-colors)...);
